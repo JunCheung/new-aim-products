@@ -13,6 +13,9 @@ module.exports = defineConfig({
         }
       }
     }
+  },
+  devServer: {
+    proxy: 'https://services.dev.dropshipzone.com.au/api/dsz-api'
   }
 
 })
