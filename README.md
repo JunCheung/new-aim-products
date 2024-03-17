@@ -1,5 +1,9 @@
 # new-aim
 
+### Preview
+
+https://juncheung.github.io
+
 ## Project setup
 ```
 npm install

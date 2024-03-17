@@ -6,7 +6,7 @@ import {login} from "@/api/user";
 // axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
 // create an axios instance
 const service = axios.create({
-    baseURL: '', // url = base url + request url
+    baseURL: '/api/dsz-api', // url = base url + request url
     timeout: 5000 // request timeout
 })
 
