@@ -6,7 +6,7 @@ export function login() {
         'password': 'asdf_123456'
     }
     return request({
-        url: '/auth',
+        url: '/api/dsz-api/auth',
         method: 'post',
         data
     })

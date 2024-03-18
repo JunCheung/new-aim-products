@@ -2,7 +2,7 @@
 
 ### Preview
 
-https://juncheung.github.io
+http://new-aim.oitsme.com/#/
 
 ## Project setup
 ```

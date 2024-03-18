@@ -3,10 +3,11 @@ import store from '../store'
 import {getToken} from './auth'
 import {login} from "@/api/user";
 
-// axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
+// axios.defaults.headers['Content-Type'] = 'application/json'
+// axios.defaults.headers['Access-Control-Allow-Origin'] = '*'
 // create an axios instance
 const service = axios.create({
-    baseURL: '/api/dsz-api', // url = base url + request url
+    baseURL: '', // url = base url + request url
     timeout: 5000 // request timeout
 })
 
@@ -21,6 +22,8 @@ service.interceptors.request.use(
             // please modify it according to the actual situation
             config.headers['Authorization'] = 'jwt ' + getToken()
         }
+        // config.headers['Content-Type'] = 'application/json'
+        // config.headers['Access-Control-Allow-Origin'] = '*'
         return config
     },
     error => {
@@ -57,7 +60,6 @@ service.interceptors.response.use(
             return login().then((response) => {
                 return store.dispatch('user/setToken', response.data.token).then(() => {
                     error.config.headers['Authorization'] = 'jwt ' + getToken()
-                    error.config.url = error.config.url.replace('/api', '')
                     return axios(error.config)
                 }).catch(() => {
                     return Promise.reject(error)

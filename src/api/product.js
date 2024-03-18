@@ -6,7 +6,7 @@ export function getProducts(keyword, pageNo, limit) {
         params += 'keywords=' + keyword + '&'
     }
     return request({
-        url: '/products?' + params + 'page_no=' + pageNo + '&limit=' + limit,
+        url: '/api/dsz-api/products?' + params + 'page_no=' + pageNo + '&limit=' + limit,
         method: 'get'
     })
 }
