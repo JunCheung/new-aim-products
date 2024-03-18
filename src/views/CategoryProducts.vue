@@ -153,4 +153,9 @@ export default {
     grid-gap: 10px;
   }
 }
+
+/deep/ .el-loading-spinner {
+  left: 50% !important;
+  margin-top: 10px !important;
+}
 </style>
